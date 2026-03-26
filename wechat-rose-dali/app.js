@@ -4,6 +4,8 @@ const roseTrigger = document.getElementById("rose-trigger");
 const photoModal = document.getElementById("photo-modal");
 const photoBackdrop = document.getElementById("photo-backdrop");
 const photoClose = document.getElementById("photo-close");
+const photoImage = document.getElementById("photo-image");
+const photoError = document.getElementById("photo-error");
 
 const petals = [];
 const petalCount = 22;
@@ -17,6 +19,14 @@ function closePhoto() {
   photoModal.hidden = true;
   document.body.style.overflow = "";
 }
+
+photoImage.addEventListener("load", () => {
+  photoError.hidden = true;
+});
+
+photoImage.addEventListener("error", () => {
+  photoError.hidden = false;
+});
 
 function resizeCanvas() {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
