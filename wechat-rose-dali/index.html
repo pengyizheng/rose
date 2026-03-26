@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#2f0913" />
+    <title>大柳 · 玫瑰绽放</title>
+    <meta
+      name="description"
+      content="一个适合微信内打开的动态玫瑰页面，献给大柳。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="petal-canvas" aria-hidden="true"></canvas>
+
+    <main class="scene">
+      <div class="glow glow-left"></div>
+      <div class="glow glow-right"></div>
+
+      <section class="card" aria-label="动态玫瑰展示">
+        <p class="intro">打开这一页，玫瑰正在为你盛开</p>
+
+        <div class="rose-wrap">
+          <div class="rose" aria-hidden="true">
+            <div class="spark spark-one"></div>
+            <div class="spark spark-two"></div>
+            <div class="bloom">
+              <span class="petal petal-center"></span>
+              <span class="petal petal-a"></span>
+              <span class="petal petal-b"></span>
+              <span class="petal petal-c"></span>
+              <span class="petal petal-d"></span>
+              <span class="petal petal-e"></span>
+              <span class="petal petal-f"></span>
+              <span class="petal petal-g"></span>
+            </div>
+            <div class="stem"></div>
+            <div class="leaf leaf-left"></div>
+            <div class="leaf leaf-right"></div>
+          </div>
+        </div>
+
+        <div class="title-wrap">
+          <h1 class="title" data-text="大柳">大柳</h1>
+          <p class="subtitle">愿这一朵会呼吸的玫瑰，替你说出温柔。</p>
+        </div>
+
+        <div class="hint">建议用 GitHub Pages 发布后，把链接发到微信里打开</div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
