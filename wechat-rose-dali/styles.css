@@ -433,7 +433,7 @@ body {
   display: block;
   width: 100%;
   max-height: 72vh;
-  object-fit: cover;
+  object-fit: contain;
   background: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
