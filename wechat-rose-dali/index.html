@@ -12,6 +12,7 @@
       name="description"
       content="一个适合微信内打开的动态玫瑰页面，献给大柳。"
     />
+    <link rel="preload" as="image" href="./assets/dali-photo-fast.jpg" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -69,12 +70,13 @@
         <img
           class="photo-image"
           id="photo-image"
-          src="./assets/dali-photo-web-fixed.jpg"
+          src="./assets/dali-photo-fast.jpg"
           alt="大柳的照片"
-          width="1200"
-          height="900"
+          width="700"
+          height="525"
           loading="eager"
           decoding="sync"
+          fetchpriority="high"
         />
         <p class="photo-error" id="photo-error" hidden>照片加载中，请再点开一次试试。</p>
       </section>

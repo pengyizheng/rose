@@ -6,6 +6,7 @@ const photoBackdrop = document.getElementById("photo-backdrop");
 const photoClose = document.getElementById("photo-close");
 const photoImage = document.getElementById("photo-image");
 const photoError = document.getElementById("photo-error");
+const photoSource = "./assets/dali-photo-fast.jpg";
 
 const petals = [];
 const petalCount = 22;
@@ -18,6 +19,13 @@ function openPhoto() {
 function closePhoto() {
   photoModal.hidden = true;
   document.body.style.overflow = "";
+}
+
+function preloadPhoto() {
+  const image = new Image();
+  image.decoding = "async";
+  image.loading = "eager";
+  image.src = photoSource;
 }
 
 photoImage.addEventListener("load", () => {
@@ -108,6 +116,7 @@ function animate() {
 resizeCanvas();
 resetPetals();
 animate();
+preloadPhoto();
 
 window.addEventListener("resize", () => {
   resizeCanvas();
