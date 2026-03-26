@@ -25,7 +25,13 @@
         <p class="intro">打开这一页，玫瑰正在为你盛开</p>
 
         <div class="rose-wrap">
-          <div class="rose" aria-hidden="true">
+          <button
+            class="rose-trigger"
+            id="rose-trigger"
+            type="button"
+            aria-label="点开玫瑰查看照片"
+          >
+            <div class="rose" aria-hidden="true">
             <div class="spark spark-one"></div>
             <div class="spark spark-two"></div>
             <div class="bloom">
@@ -41,7 +47,8 @@
             <div class="stem"></div>
             <div class="leaf leaf-left"></div>
             <div class="leaf leaf-right"></div>
-          </div>
+            </div>
+          </button>
         </div>
 
         <div class="title-wrap">
@@ -51,6 +58,17 @@
 
       </section>
     </main>
+
+    <div class="photo-modal" id="photo-modal" hidden>
+      <div class="photo-backdrop" id="photo-backdrop"></div>
+      <section class="photo-sheet" role="dialog" aria-modal="true" aria-labelledby="photo-title">
+        <button class="photo-close" id="photo-close" type="button" aria-label="关闭照片">
+          ×
+        </button>
+        <p class="photo-kicker" id="photo-title">送给大柳</p>
+        <img class="photo-image" src="./assets/dali-photo.jpg" alt="大柳的照片" />
+      </section>
+    </div>
 
     <script src="./app.js"></script>
   </body>

@@ -107,6 +107,25 @@ body {
   margin-top: 12px;
 }
 
+.rose-trigger {
+  appearance: none;
+  position: relative;
+  display: block;
+  width: 220px;
+  height: 290px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.rose-trigger:focus-visible {
+  outline: 2px solid rgba(255, 220, 160, 0.9);
+  outline-offset: 10px;
+  border-radius: 28px;
+}
+
 .rose {
   position: absolute;
   left: 50%;
@@ -116,6 +135,12 @@ body {
   transform: translateX(-50%);
   transform-origin: center bottom;
   animation: sway 4.6s ease-in-out infinite;
+}
+
+.rose-trigger:hover .rose,
+.rose-trigger:focus-visible .rose {
+  animation-duration: 3.8s;
+  filter: drop-shadow(0 0 28px rgba(255, 118, 164, 0.3));
 }
 
 .bloom {
@@ -365,6 +390,75 @@ body {
   line-height: 1.7;
 }
 
+.photo-modal[hidden] {
+  display: none;
+}
+
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.photo-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 4, 8, 0.78);
+  backdrop-filter: blur(14px);
+}
+
+.photo-sheet {
+  position: relative;
+  width: min(100%, 430px);
+  padding: 16px 16px 18px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 219, 228, 0.22);
+  background: rgba(37, 7, 16, 0.92);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  animation: reveal 0.45s ease;
+}
+
+.photo-kicker {
+  margin: 0 0 10px;
+  text-align: center;
+  color: var(--gold);
+  letter-spacing: 0.18em;
+  font-size: 0.92rem;
+}
+
+.photo-image {
+  display: block;
+  width: 100%;
+  max-height: 72vh;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+.photo-close {
+  appearance: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff3f5;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.photo-close:focus-visible {
+  outline: 2px solid rgba(255, 220, 160, 0.9);
+  outline-offset: 2px;
+}
+
 .hint {
   margin-top: 18px;
   color: rgba(255, 237, 205, 0.78);
@@ -463,6 +557,17 @@ body {
   }
 }
 
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @media (max-width: 480px) {
   .scene {
     padding: 16px;
@@ -488,5 +593,19 @@ body {
 
   .subtitle {
     font-size: 0.94rem;
+  }
+
+  .photo-modal {
+    padding: 14px;
+  }
+
+  .photo-sheet {
+    padding: 14px 14px 16px;
+    border-radius: 22px;
+  }
+
+  .photo-image {
+    max-height: 68vh;
+    border-radius: 16px;
   }
 }
